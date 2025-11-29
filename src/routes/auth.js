@@ -1,4 +1,4 @@
-// auth route placehconst express = require('express');
+const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const pool = require('../../db/pool'); // your PostgreSQL pool connection
