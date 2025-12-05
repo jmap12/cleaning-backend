@@ -36,6 +36,11 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/admin', adminRoutes);
 
+// health check
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', uptime: process.uptime() });
+});
+
 // ---------- 404 HANDLER ----------
 app.use((req, res) => {
   res.status(404).json({ error: "Route not found" });
